@@ -3,6 +3,7 @@ title: Q’eros
 path: qeros
 ---
 
+import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import CaptionedPhoto from '../components/captionedPhoto'
 import FixedBgPhoto from '../components/fixedBgPhoto'
@@ -10,10 +11,22 @@ import NextButton from '../components/nextButton'
 
 export default Layout
 
+export const pageQuery = graphql`
+  query {
+    image1: file(relativePath: { eq: "qeros.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
 # Q’eros
 ## "Keh-ros"
 
-<CaptionedPhoto captionSide="right" image="../../../content/assets/gatsby-icon.png">
+<CaptionedPhoto captionSide="right" image={props.data.image1.childImageSharp.fluid}>
 
 The Q’eros people are known as the wisdom keepers of the Andes. Considered to be the “último ayllu inka,” or the last Incan community of Peru, the Q’eros strive to preserve and promote their indigenous ethnic and cultural identity.
 
@@ -67,3 +80,6 @@ The Q’eros people are known as the wisdom keepers of the Andes. Considered to 
 />
 
 <NextButton title="Projects" caption="See how we help" uri="/projects" />
+
+
+

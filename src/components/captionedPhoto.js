@@ -1,17 +1,18 @@
 import React from "react"
-import { Picture } from 'react-responsive-picture';
+import Img from "gatsby-image"
+import { Parallax } from 'react-scroll-parallax';
 
 const CaptionedPhoto = (props) => {
   let cs = props.captionSide ? props.captionSide : "left";
   let ext = props.extension ? props.extension : "jpg";
   let content = props.children ? props.children : <p>{props.caption}</p>
-  let src = props.image + '@2x.' + ext + ' 2x, ' +
-            props.image + '.' + ext + ' 1x';
             
   return (
     <div>
       {(cs === "left") ? content : ""}
-      <Picture src={src}/>
+      <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
+        {props.image ? <Img fluid={props.image} /> : ""}
+      </Parallax>
       {(cs === "right") ? content : ""}
     </div>
   )
