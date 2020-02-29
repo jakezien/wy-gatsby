@@ -8,12 +8,14 @@ const CaptionedPhoto = (props) => {
   let content = props.children ? props.children : <p>{props.caption}</p>
             
   return (
-    <div>
-      {(cs === "left") ? content : ""}
-      <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
-        {props.image ? <Img fluid={props.image} /> : ""}
-      </Parallax>
-      {(cs === "right") ? content : ""}
+    <div class="parallaxFrame">
+      <div>
+        {(cs === "left") ? content : ""}
+        <Parallax className="custom-class" y={[0, 20]} tagOuter="figure">
+          {props.image ? <Img fluid={props.image} /> : ""}
+        </Parallax>
+        {(cs === "right") ? content : ""}
+      </div>
     </div>
   )
 }
