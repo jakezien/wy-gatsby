@@ -8,16 +8,10 @@ const CaptionedPhoto = (props) => {
   let cs = props.captionSide ? props.captionSide : "left";
   let ext = props.extension ? props.extension : "jpg";
 
-
-  const Frame = styled.div`
-    border: 20px solid white;
-    overflow: hidden;
-  `
-
   const Container = styled.div`
     display: flex;
     width: 100%;
-    margin: ${rhythm(8)} auto;
+    margin: ${rhythm(12)} auto;
   `
 
   const ImageContainer = styled.div`
@@ -27,6 +21,7 @@ const CaptionedPhoto = (props) => {
 
   const CaptionContainer = styled.div`
     max-width: ${rhythm(8)};
+    margin: 0 ${rhythm(1)};
   `
   
   let content = (
@@ -35,11 +30,21 @@ const CaptionedPhoto = (props) => {
     </CaptionContainer>
   )
             
+  let parallaxProps = {
+    className : 'custom-class',
+    tagOuter : 'figure'
+  }
+
+  if (props.parallaxH) 
+    parallaxProps.x = [5, -5]
+  else 
+    parallaxProps.y = [-15, 15]
+
   return (
     <Container>
       {(cs === "left") ? content : ""}
       <ImageContainer>
-        <Parallax className="custom-class" y={[0, 20]} tagOuter="figure">
+        <Parallax {...parallaxProps}>
           {props.image ? <Img fluid={props.image} /> : ""}
         </Parallax>
       </ImageContainer>

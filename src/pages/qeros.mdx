@@ -6,17 +6,11 @@ path: qeros
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import CaptionedPhoto from '../components/captionedPhoto'
-import FixedBgPhoto from '../components/fixedBgPhoto'
+import CoverPhoto from '../components/coverPhoto'
 import NextButton from '../components/nextButton'
+import {getImageNodeByName} from '../utils/util'
 
 export default Layout
-
-export const getImageNodeByName = (props, name) => {
-  let filteredResult = props.data.images.edges.filter((e) => { 
-    return (e.node.name === name) 
-  })
-  return filteredResult[0].node.childImageSharp.fluid
-}
 
 export const pageQuery = graphql`
   query images {
@@ -47,7 +41,7 @@ The Q’eros people are known as the wisdom keepers of the Andes. Considered to 
 
 
 
-<CaptionedPhoto image={getImageNodeByName(props, 'skywalk')}>
+<CaptionedPhoto parallaxH image={getImageNodeByName(props, 'skywalk')}>
   
 The Q’eros Nation has been designated by Peru’s Ministry of Culture a “national living cultural patrimony” for the continuity of its ancient Andean traditions."
 
@@ -55,11 +49,11 @@ The Q’eros Nation has been designated by Peru’s Ministry of Culture a “nat
 
 
 
-<FixedBgPhoto image="">
+<CoverPhoto image={getImageNodeByName(props, 'skywalk')}>
 
 Q’eros live a hardworking life at one with nature: they perform offerings to Pacha Mama, Mother Earth, and to the Apus, mountain spirits, in exchange for the well being of their animals, crops and community.
 
-</FixedBgPhoto>
+</CoverPhoto>
 
 
 
@@ -80,12 +74,12 @@ Love, joy, perseverance, intrinsic integrity, and the ability to “simply just 
 
 
 
-<FixedBgPhoto image="">
+<CoverPhoto image={getImageNodeByName(props, 'skywalk')}>
 
 ## Where in the World 
 The remote villages of Q’eros are located 14,500 feet above sea level in the snow-capped Cordillera Vilcanota range, the highest mountain chain in southeastern Peru. There are over 2,000 people who live in the nation’s fourteen villages, spread across many river valleys.
 
-</FixedBgPhoto>
+</CoverPhoto>
 
 
 

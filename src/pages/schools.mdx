@@ -5,15 +5,32 @@ path: schools
 
 import Layout from '../components/layout'
 import CaptionedPhoto from '../components/captionedPhoto'
-import FixedBgPhoto from '../components/fixedBgPhoto'
 import NextButton from '../components/nextButton'
+import {getImageNodeByName} from '../utils/util'
 
 export default Layout
+
+export const pageQuery = graphql`
+  query schoolsImages {
+    images: allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "schools"}}) {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fluid(maxWidth: 1200, maxHeight: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 # Schools
 ## Willka Yachay's education initiative
 
-<CaptionedPhoto image="">
+<CaptionedPhoto image={getImageNodeByName(props, 'building')}>
 
 Willka Yachay builds and sustains culturally and ecologically based schools high in the Andes. We currently support eight schools: three pre-k, three primary schools, one high school and one adult school.
 
@@ -23,7 +40,7 @@ Working with Q’eros community members, we have constructed four school buildin
 
 
 
-<CaptionedPhoto image="" captionSide="right">
+<CaptionedPhoto  captionSide="right" image={getImageNodeByName(props, 'top')}>
 
 Willka Yachay collaborates with Q’ero parents and elders, acts as a school system administrator, creates and coordinates curriculum development, hires and supports culturally sensitive teachers, provides all supplies and nutritious food, and plans educational (and fun) national and international educational field trips.
 
@@ -31,7 +48,7 @@ Willka Yachay collaborates with Q’ero parents and elders, acts as a school sys
 
 
 
-<CaptionedPhoto image="">
+<CaptionedPhoto image={getImageNodeByName(props, 'chalkboard')}>
 
 ## Modern Inkan Education
 
@@ -40,14 +57,14 @@ We provide an education that enables young Q’eros to direct their community’
 </CaptionedPhoto>
 
 
-<CaptionedPhoto image="" captionSide="right">
+<CaptionedPhoto  captionSide="right" image={getImageNodeByName(props, 'girls')}>
 
 Our schools are innovative because our students are becoming aware of their Inkan origins and using both traditional wisdom and modern knowledge for empowerment in today’s world. They are realizing that they, like their ancestors before them, are capable of achieving greatness by using their own resources and creativity within the context of their indigenous culture and mountain homeland.
 
 </CaptionedPhoto>
 
 
-<CaptionedPhoto image="">
+<CaptionedPhoto image={getImageNodeByName(props, 'paz')}>
 
 ## Preschool & Primary Schools
 
@@ -56,7 +73,7 @@ Willka Yachay coordinates all fundraising and programming for Ima Sumaq Preschoo
 </CaptionedPhoto>
 
 
-<CaptionedPhoto image="" captionSide="right" >
+<CaptionedPhoto captionSide="right" image={getImageNodeByName(props, 'high-school-new')}>
 
 ## Ethnic High School & Adult School
 
@@ -66,7 +83,7 @@ In 2016, we built a dormitory for students who had been walking up to three hour
 
 </CaptionedPhoto>
 
-<CaptionedPhoto image="">
+<CaptionedPhoto image={getImageNodeByName(props, 'math')}>
 
 ## Inkan Mathematics
 
