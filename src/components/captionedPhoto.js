@@ -3,16 +3,17 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { Parallax } from 'react-scroll-parallax';
 import { rhythm, scale } from "../utils/typography"
+import Container from "./container"
 
 const CaptionedPhoto = (props) => {
   let cs = props.captionSide ? props.captionSide : "left";
   let ext = props.extension ? props.extension : "jpg";
 
-  const Container = styled.div`
+  const StyledContainer = styled(Container)`
     display: flex;
-    width: 100%;
-    margin: ${rhythm(12)} auto;
-  `
+    margin-top: ${rhythm(12)};
+    margin-bottom: ${rhythm(12)};
+  `;
 
   const ImageContainer = styled.div`
     width: ${rhythm(24)};
@@ -41,7 +42,7 @@ const CaptionedPhoto = (props) => {
     parallaxProps.y = [-15, 15]
 
   return (
-    <Container>
+    <StyledContainer className={props.className}>
       {(cs === "left") ? content : ""}
       <ImageContainer>
         <Parallax {...parallaxProps}>
@@ -49,7 +50,7 @@ const CaptionedPhoto = (props) => {
         </Parallax>
       </ImageContainer>
       {(cs === "right") ? content : ""}
-    </Container>
+    </StyledContainer>
   )
 }
 

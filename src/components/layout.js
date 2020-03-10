@@ -9,14 +9,7 @@ import Footer from "./footer"
 const Layout = ({ location, title, children }) => {
   return (
     <ParallaxProvider>
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(32),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <div>
         <Header title="Poop" />
         <main>{children}</main>
         <Footer />

@@ -1,30 +1,36 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
 import { Parallax } from 'react-scroll-parallax';
 import { rhythm, scale } from "../utils/typography"
 
 const CoverPhoto = (props) => {
+
+  const Container = styled.section`
+    width: 100%;
+    height 100vh;
+    background: red;
+    position: relative; 
+  `
+
+  const FixedBg = styled.figure`
+    width: 100%;
+    height: 100%;
+  `
+
   const CaptionContainer = styled.div`
     max-width: ${rhythm(20)};
   `
 
   return (
-    <BackgroundImage 
-      Tag="div" 
-      fluid={props.image} 
-      classname={props.classname}
-      style={{
-        width: '100%',
-        height: '100vh',
-        minHeight: '600px',
-      }}
-      >
+    <Container>
+      <FixedBg>
+        {props.bg}
+      </FixedBg>
       <CaptionContainer>
         {props.children ? props.children : <p>{props.caption}</p>}
       </CaptionContainer>
-    </BackgroundImage>
+    </Container>
   )
 }
 
