@@ -9,23 +9,39 @@ const CoverPhoto = (props) => {
   const Container = styled.section`
     width: 100%;
     height 100vh;
-    background: red;
-    position: relative; 
+    position: relative;
+    display: flex;
+    overflow: hidden;
   `
 
   const FixedBg = styled.figure`
     width: 100%;
     height: 100%;
+    position: absolute;
   `
 
   const CaptionContainer = styled.div`
     max-width: ${rhythm(20)};
+    margin: auto;
+    position: relative;
   `
+
+  let parallaxProps = {
+    className : 'custom-class',
+    tagOuter : 'figure'
+  }
+
+  if (props.parallaxH)
+    parallaxProps.x = [50, -50]
+  else 
+    parallaxProps.y = [-60, 60]
 
   return (
     <Container>
       <FixedBg>
-        {props.bg}
+        <Parallax {...parallaxProps}>
+          {props.bg}
+        </Parallax>
       </FixedBg>
       <CaptionContainer>
         {props.children ? props.children : <p>{props.caption}</p>}

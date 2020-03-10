@@ -7,6 +7,9 @@ const Ul = styled.ul`
   display: flex;
   justify-content: space-between;
   padding: ${rhythm(0.5)} ${rhythm(1)};
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
   li {
     list-style: none;
   }
