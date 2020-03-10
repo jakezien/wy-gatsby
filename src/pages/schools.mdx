@@ -4,7 +4,9 @@ path: schools
 ---
 
 import Layout from '../components/layout'
+import CoverPhoto from '../components/coverPhoto'
 import CaptionedPhoto from '../components/captionedPhoto'
+import Img from "gatsby-image"
 import NextButton from '../components/nextButton'
 import {getImageNodeByName} from '../utils/util'
 
@@ -27,8 +29,14 @@ export const pageQuery = graphql`
   }
 `
 
+<CoverPhoto bg={<Img fluid={getImageNodeByName(props, 'cover')}/>} >
+
 # Schools
 ## Willka Yachay's education initiative
+
+</CoverPhoto>
+
+
 
 <CaptionedPhoto image={getImageNodeByName(props, 'building')}>
 
