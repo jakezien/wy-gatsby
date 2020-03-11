@@ -6,7 +6,7 @@ import { rhythm, scale } from "../utils/typography"
 import Container from "./container"
 
 const CaptionedPhoto = (props) => {
-  let cs = props.captionSide ? props.captionSide : "left";
+  let captionSide = props.captionRight ? 'right' : 'left';
   let ext = props.extension ? props.extension : "jpg";
 
   const StyledContainer = styled(Container)`
@@ -43,13 +43,13 @@ const CaptionedPhoto = (props) => {
 
   return (
     <StyledContainer className={props.className}>
-      {(cs === "left") ? content : ""}
+      {(captionSide === "left") ? content : ""}
       <ImageContainer>
         <Parallax {...parallaxProps}>
           {props.image ? <Img fluid={props.image} /> : ""}
         </Parallax>
       </ImageContainer>
-      {(cs === "right") ? content : ""}
+      {(captionSide === "right") ? content : ""}
     </StyledContainer>
   )
 }

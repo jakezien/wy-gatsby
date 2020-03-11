@@ -4,9 +4,6 @@ import Img from "gatsby-image"
 import { Parallax } from 'react-scroll-parallax';
 import { rhythm, scale } from "../utils/typography"
 
-const StyledImg = styled(Img)`
-  height: 100vh;
-`
 
 const Container = styled.section`
   width: 100%;
@@ -30,6 +27,10 @@ const CaptionContainer = styled.div`
   p {font-size: 2em;}
 `
 
+const StyledImg = styled(Img)`
+  height: 100vh;
+`
+
 const CoverPhoto = (props) => {
   let parallaxProps = {
     className : 'custom-class',
@@ -42,7 +43,7 @@ const CoverPhoto = (props) => {
     parallaxProps.y = [-60, 60]
 
   return (
-    <Container>
+    <Container className={props.className}>
       <FixedBg>
         <Parallax {...parallaxProps}>
           {props.bg ? props.bg : <StyledImg fluid={props.image} />}

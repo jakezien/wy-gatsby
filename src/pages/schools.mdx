@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import CoverPhoto from '../components/coverPhoto'
 import CaptionedPhoto from '../components/captionedPhoto'
 import Img from "gatsby-image"
-import NextButton from '../components/nextButton'
+import CtaButton from '../components/ctaButton'
 import {getImageNodeByName} from '../utils/util'
 
 export default Layout
@@ -29,7 +29,7 @@ export const pageQuery = graphql`
   }
 `
 
-<CoverPhoto bg={<Img fluid={getImageNodeByName(props, 'cover')}/>} >
+<CoverPhoto image={getImageNodeByName(props, 'cover@2x')} >
 
 # Schools
 ## Willka Yachay's education initiative
@@ -48,7 +48,7 @@ Working with Q’eros community members, we have constructed four school buildin
 
 
 
-<CaptionedPhoto  captionSide="right" image={getImageNodeByName(props, 'top')}>
+<CaptionedPhoto  captionRight image={getImageNodeByName(props, 'top')}>
 
 Willka Yachay collaborates with Q’ero parents and elders, acts as a school system administrator, creates and coordinates curriculum development, hires and supports culturally sensitive teachers, provides all supplies and nutritious food, and plans educational (and fun) national and international educational field trips.
 
@@ -65,7 +65,7 @@ We provide an education that enables young Q’eros to direct their community’
 </CaptionedPhoto>
 
 
-<CaptionedPhoto  captionSide="right" image={getImageNodeByName(props, 'girls')}>
+<CaptionedPhoto  captionRight image={getImageNodeByName(props, 'girls')}>
 
 Our schools are innovative because our students are becoming aware of their Inkan origins and using both traditional wisdom and modern knowledge for empowerment in today’s world. They are realizing that they, like their ancestors before them, are capable of achieving greatness by using their own resources and creativity within the context of their indigenous culture and mountain homeland.
 
@@ -81,9 +81,14 @@ Willka Yachay coordinates all fundraising and programming for Ima Sumaq Preschoo
 </CaptionedPhoto>
 
 
-<CaptionedPhoto captionSide="right" image={getImageNodeByName(props, 'high-school-new')}>
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'high-school-new')}>
 
 ## Ethnic High School & Adult School
+
+8 matches across 3 files
+
+
+Searching 62 files for "captionSide"
 
 In 2012, we opened Collegio Etnico, an ethnic high school in the village of Qocha Moqo. The school’s community-derived curriculum is the first of its kind in Peru: it both originates in and nurtures a rich indigenous cultural heritage. It teaches language and math through scientific, environmental, and ethnographic projects, all of which improve the lives of its students and their families. Our high school and adult learning center provide an education that will enable young Q’eros to go on to university and ultimately direct their community’s future.
 
@@ -101,4 +106,4 @@ To schedule an online or in person lesson, [contact us.](mailto:info@willkayacha
 
 </CaptionedPhoto>
 
-<NextButton title="Q’eros" caption="Meet the people we help" uri="/qeros" />
+<CtaButton to="/qeros" text="Q’eros" caption="Meet the people we help" next />

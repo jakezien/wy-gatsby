@@ -7,7 +7,7 @@ import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import CaptionedPhoto from '../components/captionedPhoto'
 import CoverPhoto from '../components/coverPhoto'
-import NextButton from '../components/nextButton'
+import CtaButton from '../components/ctaButton'
 import {getImageNodeByName} from '../utils/util'
 import Img from "gatsby-image"
 import BgVideo from "../components/bgVideo"
@@ -15,11 +15,12 @@ import BgVideo from "../components/bgVideo"
 import WhereMp4 from '../images/qeros/where.mp4'
 import OfferingMp4 from '../images/qeros/offering.mp4'
 
-export default Layout
-
 export const pageQuery = graphql`
-  query images {
-    images: allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "qeros"}}) {
+  query qerosImages {
+    images: allFile(filter: {
+      extension: {regex: "/(jpg)|(jpeg)|(png)/"}, 
+      relativeDirectory: {eq: "qeros"}
+    }) {
       edges {
         node {
           name
@@ -33,6 +34,7 @@ export const pageQuery = graphql`
     }
   }
 `
+export default Layout
 
 <CoverPhoto image={getImageNodeByName(props, 'cover@2x')} >
 
@@ -42,7 +44,7 @@ export const pageQuery = graphql`
 </CoverPhoto>
 
 
-<CaptionedPhoto captionSide="right" image={getImageNodeByName(props, 'sonia@2x')}>
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'sonia@2x')}>
 
 The Q’eros people are known as the wisdom keepers of the Andes. Considered to be the “último ayllu inka,” or the last Incan community of Peru, the Q’eros strive to preserve and promote their indigenous ethnic and cultural identity.
 
@@ -74,7 +76,7 @@ Worldview concepts of ayni, the importance of reciprocal sharing, and animu, awa
 
 
 
-<CaptionedPhoto captionSide = 'right' image={getImageNodeByName(props, 'sebastian')} >
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'sebastian')} >
 
 Love, joy, perseverance, intrinsic integrity, and the ability to “simply just be” suffuse their daily lives.
 
@@ -100,7 +102,7 @@ Q’eros travel between three different ecosystems that span from 15,500 feet do
 
 
 
-<CaptionedPhoto captionSide="right" image={getImageNodeByName(props, 'llamas')}>
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'llamas')}>
 
 They raise llamas and alpacas at the highest altitudes; descend to grow potatoes and raise sheep; and descend further to grow corn, squash & other vegetables, and to harvest bamboo and wood for buildings, looms and flutes.
 
@@ -116,4 +118,4 @@ Despite the harsh conditions to which they are exposed, and a history as targets
 
 
 
-<NextButton title="Projects" caption="See how we help" uri="/projects" />
+<CtaButton to="/projects" text="Projects" caption="See how we help" next />

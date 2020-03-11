@@ -1,0 +1,94 @@
+import {graphql} from 'gatsby'
+import Layout from '../components/layout'
+import CaptionedPhoto from '../components/captionedPhoto'
+import CoverPhoto from '../components/coverPhoto'
+import CtaButton from '../components/ctaButton'
+import Logotype from '../components/logotype'
+import {getImageNodeByName} from '../utils/util'
+import Img from "gatsby-image"
+import BgVideo from "../components/bgVideo"
+
+import IntroMp4 from '../images/home/home.mp4'
+
+export const pageQuery = graphql`
+  query indexImages {
+    images: allFile(filter: {
+      extension: {regex: "/(jpg)|(jpeg)|(png)/"}, 
+      relativeDirectory: {eq: "home"}
+    }) {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fluid(maxWidth: 1200, maxHeight: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+export default Layout
+
+<Logotype horizontal />
+
+<CoverPhoto bg={<BgVideo src={IntroMp4} />}>
+
+## Empowering the Q’eros Nation of Peru
+
+Willka Yachay is a nonprofit organization dedicated to helping indigenous communities thrive in the modern world.
+We are empowering the next generation of the indigenous Q’eros Nation of Peru to become leaders who elevate their standard of living, guide their community toward sustainable modernity and revitalize their cultural identity.
+
+</CoverPhoto>
+
+
+
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'cover@2x')}>
+
+<CtaButton text='Q’eros' caption="Who we help" to="/qeros" />
+
+The Q’eros people are known as the wisdom keepers of the Andes. Considered to be the “último ayllu inka,” or the last Incan community of Peru, the Q’eros strive to preserve and promote their indigenous ethnic and cultural identity.
+
+</CaptionedPhoto>
+
+
+
+<CaptionedPhoto image={getImageNodeByName(props, 'projects@2x')}>
+
+<CtaButton text='Projects' caption="What we do" to="/projects" />
+
+Together with the Q'eros, we build and sustain schools and implement solar programs, a weaving cooperative, music and cultural preservation projects; provide food and water security, a medical center, mother and infant care, and lead learning expeditions to Q’eros.
+
+</CaptionedPhoto>
+
+
+
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'schools@2x')}>
+
+<CtaButton text='Schools' caption="Our education initiative" to="/schools" />
+
+Willka Yachay builds schools high in the Andes. We collaborate with Q’ero parents and elders on construction, administration and curriculum development. We employ culturally sensitive teachers and provide all supplies, nutritious food and national and international field trips.
+
+</CaptionedPhoto>
+
+
+
+<CaptionedPhoto image={getImageNodeByName(props, 'about@2x')}>
+
+<CtaButton text='About' caption="Who we are" to="/about" />
+
+Willka Yachay builds schools high in the Andes. We collaborate with Q’ero parents and elders on construction, administration and curriculum development. We employ culturally sensitive teachers and provide all supplies, nutritious food and national and international field trips.
+
+</CaptionedPhoto>
+
+
+
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'donate@2x')}>
+
+<CtaButton text='About' caption="Support our work" to="/donate" />
+
+Help us help the Q’eros people to thrive and perpetuate the beauty and wisdom of their ancient culture.
+
+</CaptionedPhoto>
