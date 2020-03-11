@@ -11,8 +11,8 @@ const CaptionedPhoto = (props) => {
 
   const StyledContainer = styled(Container)`
     display: flex;
-    margin-top: ${rhythm(12)};
-    margin-bottom: ${rhythm(12)};
+    margin-top: ${rhythm(8)};
+    margin-bottom: ${rhythm(8)};
   `;
 
   const ImageContainer = styled.div`

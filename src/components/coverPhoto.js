@@ -4,30 +4,33 @@ import Img from "gatsby-image"
 import { Parallax } from 'react-scroll-parallax';
 import { rhythm, scale } from "../utils/typography"
 
+const StyledImg = styled(Img)`
+  height: 100vh;
+`
+
+const Container = styled.section`
+  width: 100%;
+  height 90vh;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+`
+
+const FixedBg = styled.figure`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+`
+
+const CaptionContainer = styled.div`
+  max-width: ${rhythm(30)};
+  margin: auto;
+  position: relative;
+  color: #fff;
+  p {font-size: 2em;}
+`
+
 const CoverPhoto = (props) => {
-
-  const Container = styled.section`
-    width: 100%;
-    height 100vh;
-    position: relative;
-    display: flex;
-    overflow: hidden;
-  `
-
-  const FixedBg = styled.figure`
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  `
-
-  const CaptionContainer = styled.div`
-    max-width: ${rhythm(30)};
-    margin: auto;
-    position: relative;
-    color: #fff;
-    p {font-size: 2em;}
-  `
-
   let parallaxProps = {
     className : 'custom-class',
     tagOuter : 'figure'
@@ -42,7 +45,7 @@ const CoverPhoto = (props) => {
     <Container>
       <FixedBg>
         <Parallax {...parallaxProps}>
-          {props.bg}
+          {props.bg ? props.bg : <StyledImg fluid={props.image} />}
         </Parallax>
       </FixedBg>
       <CaptionContainer>
@@ -52,8 +55,4 @@ const CoverPhoto = (props) => {
   )
 }
 
-const StyledCoverPhoto = styled(CoverPhoto)`
-  border: 10px solid red;
-`
-
-export default StyledCoverPhoto
+export default CoverPhoto
