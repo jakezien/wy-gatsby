@@ -10,6 +10,10 @@ import CoverPhoto from '../components/coverPhoto'
 import NextButton from '../components/nextButton'
 import {getImageNodeByName} from '../utils/util'
 import Img from "gatsby-image"
+import BgVideo from "../components/bgVideo"
+
+import WhereMp4 from '../images/qeros/where.mp4'
+import OfferingMp4 from '../images/qeros/offering.mp4'
 
 export default Layout
 
@@ -30,7 +34,7 @@ export const pageQuery = graphql`
   }
 `
 
-<CoverPhoto bg={<Img fluid={getImageNodeByName(props, 'skywalk')}/>} >
+<CoverPhoto bg={<Img fluid={getImageNodeByName(props, 'cover@2x')}/>} >
 
 # Q’eros
 ## "Keh-ros"
@@ -54,7 +58,7 @@ The Q’eros Nation has been designated by Peru’s Ministry of Culture a “nat
 
 
 
-<CoverPhoto bg={<Img fluid={getImageNodeByName(props, 'skywalk')}/>} >
+<CoverPhoto bg={<BgVideo src={OfferingMp4} />} >
 
 Q’eros live a hardworking life at one with nature: they perform offerings to Pacha Mama, Mother Earth, and to the Apus, mountain spirits, in exchange for the well being of their animals, crops and community.
 
@@ -79,7 +83,7 @@ Love, joy, perseverance, intrinsic integrity, and the ability to “simply just 
 
 
 
-<CoverPhoto bg={<Img fluid={getImageNodeByName(props, 'skywalk')}/>} >
+<CoverPhoto bg={<BgVideo src={WhereMp4} />} >
 
 ## Where in the World 
 The remote villages of Q’eros are located 14,500 feet above sea level in the snow-capped Cordillera Vilcanota range, the highest mountain chain in southeastern Peru. There are over 2,000 people who live in the nation’s fourteen villages, spread across many river valleys.

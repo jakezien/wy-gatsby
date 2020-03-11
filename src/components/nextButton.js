@@ -18,7 +18,7 @@ const NextButton = ({ title, caption, uri }) => {
   return (      
     <Container>
       <StyledLink to={uri}>
-        <p>Next: <h4 style={{display: "inline"}}>{caption}</h4></p>
+        <span>Next: <h4 style={{display: "inline"}}>{caption}</h4></span>
         <StyledH1>{title}</StyledH1>
       </StyledLink>
     </Container>

@@ -21,9 +21,11 @@ const CoverPhoto = (props) => {
   `
 
   const CaptionContainer = styled.div`
-    max-width: ${rhythm(20)};
+    max-width: ${rhythm(30)};
     margin: auto;
     position: relative;
+    color: #fff;
+    p {font-size: 2em;}
   `
 
   let parallaxProps = {

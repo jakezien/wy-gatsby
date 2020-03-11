@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import styled from "styled-components"
+import Logotype from "./logotype"
 
 const Ul = styled.ul`
   display: flex;
@@ -18,7 +19,7 @@ const Ul = styled.ul`
 const Nav = () => {
   return (
     <Ul>
-      <div class="logotype"><Link to="/">Logo</Link></div>
+      <Link to="/"><Logotype /></Link>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/projects">Projects</Link></li>
       <li><Link to="/schools">Schools</Link></li>
@@ -27,7 +28,7 @@ const Nav = () => {
       <li><Link to="/shop">Shop</Link></li>
       <li><Link to="/blog">Blog</Link></li>
       <li><Link to="/about">About</Link></li>
-      <li class="donate-btn">Donate</li>
+      <li><Link to="/donate">Donate</Link></li>
     </Ul>
   )
 }
