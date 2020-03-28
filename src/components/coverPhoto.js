@@ -19,19 +19,25 @@ const FixedBg = styled.figure`
   position: absolute;
 `
 
-const CaptionContainer = styled.div`
-  max-width: ${rhythm(30)};
-  margin: auto;
-  position: relative;
-  color: #fff;
-  p {font-size: 2em;}
-`
 
-const StyledImg = styled(Img)`
-  height: 100vh;
-`
+
+
 
 const CoverPhoto = (props) => {
+
+  const StyledImg = styled(Img)`
+    height: 100vh;
+    opacity: ${props.transform}
+  `
+
+  const CaptionContainer = styled.div`
+    max-width: ${rhythm(30)};
+    margin: auto;
+    position: relative;
+    color: #fff;
+    p {font-size: ${props.bigText ? "2em" : "inherit"};}
+  `
+
   let parallaxProps = {
     className : 'custom-class',
     tagOuter : 'figure'
