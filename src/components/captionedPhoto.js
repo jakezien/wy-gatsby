@@ -12,7 +12,6 @@ const CaptionedPhoto = (props) => {
   let ext = props.extension ? props.extension : "jpg";
 
   const { parallaxController } = useController();
-  console.log(Object.keys(parallaxController))
 
   const StyledContainer = styled(Container)`
     display: flex;

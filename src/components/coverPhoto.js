@@ -17,9 +17,16 @@ const FixedBg = styled.figure`
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 0
 `
 
-
+const Scrim = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: white;
+  z-index: 1;
+`
 
 
 
@@ -34,12 +41,12 @@ const CoverPhoto = (props) => {
     max-width: ${rhythm(30)};
     margin: auto;
     position: relative;
-    color: #fff;
+    z-index: 1;
+    color: ${props => props.theme.white};
     p {font-size: ${props.bigText ? "2em" : "inherit"};}
   `
 
   let parallaxProps = {
-    className : 'custom-class',
     tagOuter : 'figure'
   }
 
@@ -50,14 +57,15 @@ const CoverPhoto = (props) => {
 
   return (
     <Container className={props.className}>
+      <CaptionContainer className="caption">
+        {props.children ? props.children : <p>{props.caption}</p>}
+      </CaptionContainer>
       <FixedBg>
+        <Scrim className="scrim" />
         <Parallax {...parallaxProps}>
           {props.bg ? props.bg : <StyledImg fluid={props.image} />}
         </Parallax>
       </FixedBg>
-      <CaptionContainer>
-        {props.children ? props.children : <p>{props.caption}</p>}
-      </CaptionContainer>
     </Container>
   )
 }

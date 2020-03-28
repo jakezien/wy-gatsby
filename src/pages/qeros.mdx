@@ -11,6 +11,8 @@ import CtaButton from '../components/ctaButton'
 import {getImageNodeByName} from '../utils/util'
 import Img from "gatsby-image"
 import BgVideo from "../components/bgVideo"
+import ScrollAnimation from "../components/scrollAnimation"
+
 
 import WhereMp4 from '../images/qeros/where.mp4'
 import OfferingMp4 from '../images/qeros/offering.mp4'
@@ -36,6 +38,7 @@ export const pageQuery = graphql`
 `
 export default Layout
 
+
 <CoverPhoto image={getImageNodeByName(props, 'cover@2x')} >
 
 # Q’eros
@@ -60,7 +63,7 @@ The Q’eros Nation has been designated by Peru’s Ministry of Culture a “nat
 
 
 
-<CoverPhoto bigText bg={<BgVideo src={OfferingMp4} />} >
+<CoverPhoto bigText bg={<BgVideo src={OfferingMp4}/>} className="qeros-animation-0">
 
 Q’eros live a hardworking life at one with nature: they perform offerings to Pacha Mama, Mother Earth, and to the Apus, mountain spirits, in exchange for the well being of their animals, crops and community.
 
@@ -115,6 +118,6 @@ Despite the harsh conditions to which they are exposed, and a history as targets
 
 </CaptionedPhoto>
 
-
-
 <CtaButton to="/projects" text="Projects" caption="See how we help" next />
+
+<ScrollAnimation />
