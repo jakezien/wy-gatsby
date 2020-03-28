@@ -61,7 +61,7 @@ const CoverPhoto = (props) => {
         {props.children ? props.children : <p>{props.caption}</p>}
       </CaptionContainer>
       <FixedBg>
-        <Scrim className="scrim" />
+        {props.scrim ? <Scrim className="scrim" /> : ""}
         <Parallax {...parallaxProps}>
           {props.bg ? props.bg : <StyledImg fluid={props.image} />}
         </Parallax>
