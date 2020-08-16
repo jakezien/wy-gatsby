@@ -3,11 +3,10 @@ import * as ScrollMagic from "scrollmagic";
 import { TweenLite, TimelineLite } from "gsap"; 
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import { withTheme } from 'styled-components';
- 
-ScrollMagicPluginGsap(ScrollMagic, TweenLite, TimelineLite);
 
-
-
+if (ScrollMagicPluginGsap) {
+  ScrollMagicPluginGsap(ScrollMagic, TweenLite, TimelineLite);
+}
 
 class ScrollAnimation extends Component {
 

@@ -4,14 +4,11 @@ import Img from "gatsby-image"
 import { Parallax } from 'react-scroll-parallax';
 import { rhythm, scale } from "../utils/typography"
 import Container from "./container"
-import { useController } from 'react-scroll-parallax';
 
 
 const CaptionedPhoto = (props) => {
   let captionSide = props.captionRight ? 'right' : 'left';
   let ext = props.extension ? props.extension : "jpg";
-
-  const { parallaxController } = useController();
 
   const StyledContainer = styled(Container)`
     display: flex;

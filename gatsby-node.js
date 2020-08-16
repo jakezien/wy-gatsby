@@ -62,3 +62,23 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+// Scrollmagic fucks up the build process, so disable it during build
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /ScrollMagic/,
+            use: loaders.null(),
+          },
+          {
+            test: /scrollmagic-plugin-gsap/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
