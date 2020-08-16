@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
         <div>
           © {new Date().getFullYear()} Willka Yachay.
-          Willka Yachay is a legal Peruvian NGO.
+          Willka Yachay is a legal Peruvian NGO with a partner US 501c3.
           Photographs by Hannah Porst.
           Video courtesy of <a href="http://www.kidnectedworld.com" target="_blank">Kidnected World.</a> 
           Website by Jake Zien.

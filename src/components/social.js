@@ -5,9 +5,9 @@ import styled from "styled-components"
 const Social = () => {
   return (
     <div>
-      <i>Instagram</i>
       <i>Facebook</i>
-      <i>Twitter</i>
+      <i>Instagram</i>
+      <i>info@willkayachay.org</i>
     </div>
   )  
 }
