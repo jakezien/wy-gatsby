@@ -25,7 +25,7 @@ const Nav = () => {
       <li><Link to="/qeros">Q’eros</Link></li>
       <li><Link to="/projects">Projects</Link></li>
       <li><Link to="/schools">Schools</Link></li>
-      <li><Link to="/blog">Blog</Link></li>
+      <li><Link to="/journal">Journal</Link></li>
       <li><Link to="/about">About</Link></li>
       <li><Link to="/donate">Donate</Link></li>
     </StyledUl>
