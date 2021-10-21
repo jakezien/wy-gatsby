@@ -4,7 +4,7 @@ import { rhythm, scale } from "../utils/typography"
 import styled from "styled-components"
 import Logotype from "./logotype"
 
-const Ul = styled.ul`
+const StyledUl = styled.ul`
   display: flex;
   justify-content: space-between;
   padding: ${rhythm(0.5)} ${rhythm(1)};
@@ -18,18 +18,17 @@ const Ul = styled.ul`
 
 const Nav = () => {
   return (
-    <Ul>
+    <StyledUl>
       <Link to="/"><Logotype /></Link>
       <li><Link to="/">Home</Link></li>
+      <li><Link to="/expeditions">Expeditions</Link></li>
+      <li><Link to="/qeros">Q’eros</Link></li>
       <li><Link to="/projects">Projects</Link></li>
       <li><Link to="/schools">Schools</Link></li>
-      <li><Link to="/qeros">Q’eros</Link></li>
-      <li><Link to="/expeditions">Expeditions</Link></li>
-      <li><Link to="/shop">Shop</Link></li>
       <li><Link to="/blog">Blog</Link></li>
       <li><Link to="/about">About</Link></li>
       <li><Link to="/donate">Donate</Link></li>
-    </Ul>
+    </StyledUl>
   )
 }
 
