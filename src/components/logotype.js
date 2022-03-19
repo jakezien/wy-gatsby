@@ -1,11 +1,10 @@
 import React from "react"
-import { rhythm, scale } from "../utils/typography"
-import styled from "styled-components"
+import LogotypeSmallSvg from "../images/svg/logotype-small.svg"
 
 const Logotype = () => {
   return (      
     <i>
-      Logo
+      <LogotypeSmallSvg className="w-12 p-2"/>
     </i>
   )  
 }
