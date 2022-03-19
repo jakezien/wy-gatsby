@@ -57,7 +57,7 @@ const CoverPhoto = (props) => {
 
   return (
     <Container className={props.className}>
-      <CaptionContainer className="caption">
+      <CaptionContainer className="caption w-full">
         {props.children ? props.children : <p>{props.caption}</p>}
       </CaptionContainer>
       <FixedBg>

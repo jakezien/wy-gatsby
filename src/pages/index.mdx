@@ -32,24 +32,30 @@ export const pageQuery = graphql`
 export default Layout
 
 
-<Logotype horizontal />
 
 <CoverPhoto bg={<BgVideo src={IntroMp4} />}>
 
-## Empowering the Q’eros Nation of Peru
+  <Logotype horizontal className="fill-white block w-11/12 mx-auto"/>
+
+  <hr className="h-0.5 bg-white my-20"/>
+
+  <h2 className="text-center">Empowering the Q’eros Nation of Peru</h2>
+
+  <div className="w-full h-50"></div>
+ 
+</CoverPhoto>
+
 
 Willka Yachay is a nonprofit organization dedicated to helping indigenous communities thrive in the modern world.
 We are empowering the next generation of the Q’eros Nation of Peru to become leaders who guide their community toward sustainable modernity and perpetuate their cultural identity.
-
-</CoverPhoto>
 
 
 
 <CaptionedPhoto captionRight image={getImageNodeByName(props, 'cover@2x')}>
 
-<CtaButton text='Q’eros' caption="Who we support" to="/qeros" />
+  <CtaButton text='Q’eros' caption="Who we support" to="/qeros" />
 
-Considered Peru’s last Inkan community, the Q’eros people are the wisdom keepers of the Andes.
+  Considered Peru’s last Inkan community, the Q’eros people are the wisdom keepers of the Andes.
 
 </CaptionedPhoto>
 
@@ -57,9 +63,9 @@ Considered Peru’s last Inkan community, the Q’eros people are the wisdom kee
 
 <CaptionedPhoto image={getImageNodeByName(props, 'projects@2x')}>
 
-<CtaButton text='Projects' caption="What we do" to="/projects" />
+  <CtaButton text='Projects' caption="What we do" to="/projects" />
 
-Together with the Q'eros, Willka Yachay builds and sustains schools; builds and maintains infrastructure; provides food and water security, emergency medical care, mother and infant care, solar lighting, satellite internet, national and international travel experiences; and leads learning expeditions and spiritual retreats to Q’eros.
+  Together with the Q'eros, Willka Yachay builds and sustains schools; builds and maintains infrastructure; provides food and water security, emergency medical care, mother and infant care, solar lighting, satellite internet, national and international travel experiences; and leads learning expeditions and spiritual retreats to Q’eros.
 
 </CaptionedPhoto>
 
@@ -67,9 +73,9 @@ Together with the Q'eros, Willka Yachay builds and sustains schools; builds and 
 
 <CaptionedPhoto captionRight image={getImageNodeByName(props, 'schools@2x')}>
 
-<CtaButton text='Schools' caption="Our education initiative" to="/schools" />
+  <CtaButton text='Schools' caption="Our education initiative" to="/schools" />
 
-Willka Yachay builds schools high in the Andes. We collaborate with Q’eros parents and elders on construction, administration and curriculum development. We support culturally sensitive teachers and provide books, libraries, a computer lab, educational materials, supplies, nutritious food, intercultural experiences and national and international field trips.
+  Willka Yachay builds schools high in the Andes. We collaborate with Q’eros parents and elders on construction, administration and curriculum development. We support culturally sensitive teachers and provide books, libraries, a computer lab, educational materials, supplies, nutritious food, intercultural experiences and national and international field trips.
 
 </CaptionedPhoto>
 
@@ -77,20 +83,28 @@ Willka Yachay builds schools high in the Andes. We collaborate with Q’eros par
 
 <CaptionedPhoto image={getImageNodeByName(props, 'about@2x')} className="relative">
 
-<CtaButton text='About' caption="Who we are" to="/about" />
+  <CtaButton text='About' caption="Who we are" to="/about" />
 
-Read our story and meet the Willka Yachay team.
+  Read our story and meet the Willka Yachay team.
 
-<span class="absolute bottom-1 right-1">2012</span>
+  <span class="absolute bottom-1 right-1">2012</span>
 
 </CaptionedPhoto>
 
 
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'shop@2x')}>
+
+  <CtaButton text='Shop' caption="Our weaving cooperative" to="/shop" />
+
+  Commission handwoven textiles from Q’eros.
+
+</CaptionedPhoto>
+
 
 <CaptionedPhoto image={getImageNodeByName(props, 'donate@2x')}>
 
-<CtaButton text='Donate' caption="Support our work" to="/donate" />
+  <CtaButton text='Donate' caption="Support our work" to="/donate" />
 
-Help us help the Q’eros people to thrive and perpetuate the beauty and wisdom of their ancient culture.
+  Help us help the Q’eros people to thrive and perpetuate the beauty and wisdom of their ancient culture.
 
 </CaptionedPhoto>

@@ -1,35 +1,17 @@
 import React from "react"
-import styled from "styled-components"
 import Img from "gatsby-image"
 import { Parallax } from 'react-scroll-parallax';
-import { rhythm, scale } from "../utils/typography"
 import Container from "./container"
 
 
 const CaptionedPhoto = (props) => {
   let captionSide = props.captionRight ? 'right' : 'left';
   let ext = props.extension ? props.extension : "jpg";
-
-  const StyledContainer = styled(Container)`
-    display: flex;
-    margin-top: ${rhythm(8)};
-    margin-bottom: ${rhythm(8)};
-  `;
-
-  const ImageContainer = styled.div`
-    width: ${rhythm(24)};
-    overflow: hidden;
-  `
-
-  const CaptionContainer = styled.div`
-    max-width: ${rhythm(8)};
-    margin: 0 ${rhythm(1)};
-  `
   
   let content = (
-    <CaptionContainer>
+    <div className="max-w-xs my-0 mx-1">
       {props.children ? props.children : <p>{props.caption}</p>}
-    </CaptionContainer>
+    </div>
   )
             
   let parallaxProps = {
@@ -43,15 +25,15 @@ const CaptionedPhoto = (props) => {
     parallaxProps.y = [-15, 15]
 
   return (
-    <StyledContainer className={props.className}>
+    <Container className={`${props.className} flex my-8`}>
       {(captionSide === "left") ? content : ""}
-      <ImageContainer>
+      <div className="w-full overflow-hidden">
         <Parallax {...parallaxProps}>
           {props.image ? <Img fluid={props.image} /> : ""}
         </Parallax>
-      </ImageContainer>
+      </div>
       {(captionSide === "right") ? content : ""}
-    </StyledContainer>
+    </Container>
   )
 }
 
