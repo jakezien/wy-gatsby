@@ -28,6 +28,7 @@ export const pageQuery = graphql`
 `
 export default Layout
 
+<section className="min-h-screen mb-[30vh]">
 
 <CoverPhoto bg={<BgVideo src={IntroMp4} />}>
 
@@ -38,14 +39,17 @@ export default Layout
   <h2 className="text-center">Empowering the Q’eros Nation of Peru</h2>
 
   <div className="w-full h-50"></div>
- 
-</CoverPhoto>
 
+</CoverPhoto>
+</section>
+
+<section className="min-h-[10vh]">
 
 Willka Yachay is a nonprofit organization dedicated to helping indigenous communities thrive in the modern world.
 We are empowering the next generation of the Q’eros Nation of Peru to become leaders who guide their community toward sustainable modernity and perpetuate their cultural identity.
+</section>
 
-
+<section className="min-h-screen mb-[30vh]">
 
 <CaptionedPhoto captionRight image={getImageNodeByName(props, 'cover@2x')}>
 
@@ -54,8 +58,10 @@ We are empowering the next generation of the Q’eros Nation of Peru to become l
   Considered Peru’s last Inkan community, the Q’eros people are the wisdom keepers of the Andes.
 
 </CaptionedPhoto>
+</section>
 
 
+<section className="min-h-screen mb-[30vh]">
 
 <CaptionedPhoto image={getImageNodeByName(props, 'projects@2x')}>
 
@@ -64,8 +70,9 @@ We are empowering the next generation of the Q’eros Nation of Peru to become l
   Together with the Q'eros, Willka Yachay builds and sustains schools; builds and maintains infrastructure; provides food and water security, emergency medical care, mother and infant care, solar lighting, satellite internet, national and international travel experiences; and leads learning expeditions and spiritual retreats to Q’eros.
 
 </CaptionedPhoto>
+</section>
 
-
+<section className="min-h-screen mb-[30vh]">
 
 <CaptionedPhoto captionRight image={getImageNodeByName(props, 'schools@2x')}>
 
@@ -74,8 +81,9 @@ We are empowering the next generation of the Q’eros Nation of Peru to become l
   Willka Yachay builds schools high in the Andes. We collaborate with Q’eros parents and elders on construction, administration and curriculum development. We support culturally sensitive teachers and provide books, libraries, a computer lab, educational materials, supplies, nutritious food, intercultural experiences and national and international field trips.
 
 </CaptionedPhoto>
+</  section>
 
-
+<section className="min-h-screen mb-[30vh]">
 
 <CaptionedPhoto image={getImageNodeByName(props, 'about@2x')} className="relative">
 
@@ -86,7 +94,9 @@ We are empowering the next generation of the Q’eros Nation of Peru to become l
   <span class="absolute bottom-1 right-1">2012</span>
 
 </CaptionedPhoto>
+</section>
 
+<section className="min-h-screen mb-[30vh]">
 
 <CaptionedPhoto captionRight image={getImageNodeByName(props, 'shop@2x', 'png')}>
 
@@ -95,7 +105,9 @@ We are empowering the next generation of the Q’eros Nation of Peru to become l
   Commission handwoven textiles from Q’eros.
 
 </CaptionedPhoto>
+</section>
 
+<section className="min-h-screen mb-[30vh]">
 
 <CaptionedPhoto image={getImageNodeByName(props, 'donate@2x')}>
 
@@ -104,3 +116,4 @@ We are empowering the next generation of the Q’eros Nation of Peru to become l
   Help us help the Q’eros people to thrive and perpetuate the beauty and wisdom of their ancient culture.
 
 </CaptionedPhoto>
+</section>

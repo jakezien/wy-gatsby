@@ -23,13 +23,13 @@ const CaptionedPhoto = (props) => {
 
   return (
     <Container className={`${props.className} flex my-8`}>
-      {captionSide === "left" && <div className="pr-20">{content}</div>}
+      {captionSide === "left" && <Parallax speed={-20} className="pr-20 flex flex-col justify-center">{content}</Parallax>}
       <div className="w-2/3 overflow-hidden">
-        <Parallax {...parallaxProps}>
+        {/* <Parallax {...parallaxProps}> */}
           {props.image && <GatsbyImage image={props.image} alt={""} className="w-full shitty-bang-bang" />}
-        </Parallax>
+        {/* </Parallax> */}
       </div>
-      {(captionSide === "right") && <div className="pl-20">{content}</div>}
+      {(captionSide === "right") && <Parallax speed={-20} className="pl-20 flex flex-col justify-center">{content}</Parallax>}
     </Container>
   )
 }
