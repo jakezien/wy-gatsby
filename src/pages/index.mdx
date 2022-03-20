@@ -19,18 +19,14 @@ export const pageQuery = graphql`
         node {
           name
           childImageSharp {
-            fluid(maxWidth: 1200, maxHeight: 800) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData
           }
         }
       }
     }
   }
 `
-
 export default Layout
-
 
 
 <CoverPhoto bg={<BgVideo src={IntroMp4} />}>
@@ -92,7 +88,7 @@ We are empowering the next generation of the Q’eros Nation of Peru to become l
 </CaptionedPhoto>
 
 
-<CaptionedPhoto captionRight image={getImageNodeByName(props, 'shop@2x')}>
+<CaptionedPhoto captionRight image={getImageNodeByName(props, 'shop@2x', 'png')}>
 
   <CtaButton text='Shop' caption="Our weaving cooperative" to="/shop" />
 

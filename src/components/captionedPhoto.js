@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Parallax } from 'react-scroll-parallax';
 import Container from "./container"
 
@@ -14,25 +14,22 @@ const CaptionedPhoto = (props) => {
     </div>
   )
             
-  let parallaxProps = {
-    className : 'custom-class',
-    tagOuter : 'figure'
-  }
+  let parallaxProps = {}
 
   if (props.parallaxH) 
-    parallaxProps.x = [5, -5]
+    parallaxProps.translateX = [5, -5]
   else 
-    parallaxProps.y = [-15, 15]
+    parallaxProps.translateY = [-15, 15]
 
   return (
     <Container className={`${props.className} flex my-8`}>
-      {(captionSide === "left") ? content : ""}
-      <div className="w-full overflow-hidden">
+      {captionSide === "left" && <div className="pr-20">{content}</div>}
+      <div className="w-2/3 overflow-hidden">
         <Parallax {...parallaxProps}>
-          {props.image ? <Img fluid={props.image} /> : ""}
+          {props.image && <GatsbyImage image={props.image} alt={""} className="w-full shitty-bang-bang" />}
         </Parallax>
       </div>
-      {(captionSide === "right") ? content : ""}
+      {(captionSide === "right") && <div className="pl-20">{content}</div>}
     </Container>
   )
 }
