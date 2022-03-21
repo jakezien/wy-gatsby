@@ -26,7 +26,7 @@ const CaptionedPhoto = (props) => {
       {captionSide === "left" && <Parallax speed={-20} className="pr-20 flex flex-col justify-center">{content}</Parallax>}
       <div className="w-2/3 overflow-hidden">
         {/* <Parallax {...parallaxProps}> */}
-          {props.image && <GatsbyImage image={props.image} alt={""} className="w-full shitty-bang-bang" />}
+          {props.image && <GatsbyImage image={props.image} alt={""} className="w-full"/>}
         {/* </Parallax> */}
       </div>
       {(captionSide === "right") && <Parallax speed={-20} className="pl-20 flex flex-col justify-center">{content}</Parallax>}

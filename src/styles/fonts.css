@@ -1,0 +1,41 @@
+@font-face {
+  src: url("../fonts/GaramondPro.woff2");
+  font-family: "Garamond Pro";
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../fonts/GaramondProItalic.woff2");
+  font-family: "Garamond Pro";
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  src: url("../fonts/GaramondProBold.woff2");
+  font-family: "Garamond Pro";
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../fonts/GaramondProDisplay.woff2");
+  font-family: "Garamond Pro Display";
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../fonts/Franklin.woff2");
+  font-family: "Franklin Gothic Compressed";
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../fonts/FranklinBold.woff2");
+  font-family: "Franklin Gothic Compressed";
+  font-weight: 500;
+  font-style: normal;
+}
