@@ -6,7 +6,7 @@
 
 @layer base {
   html {
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Garamond Pro", sans-serif;
     /* @apply text-base */
   }
