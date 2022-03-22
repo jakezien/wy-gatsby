@@ -29,18 +29,12 @@ export const pageQuery = graphql`
 export default Layout
 
 <section className="min-h-screen mb-[30vh]">
-
-<CoverPhoto bg={<BgVideo src={IntroMp4} />}>
-
-  <Logotype horizontal className="fill-white block w-11/12 mx-auto"/>
-
-  <hr className="h-0.5 bg-white my-20"/>
-
-  <h2 className="text-center">Empowering the Q’eros Nation of Peru</h2>
-
-  <div className="w-full h-50"></div>
-
-</CoverPhoto>
+  <CoverPhoto bg={<BgVideo src={IntroMp4} />}>
+    <Logotype horizontal className="fill-white block w-[55%] mx-auto"/>
+    <hr className="h-0.5 bg-white my-20 w-2/3 mx-auto"/>
+    <h2 className="text-center">Empowering the Q’eros Nation of Peru</h2>
+    <div className="w-full h-50"></div>
+  </CoverPhoto>
 </section>
 
 <section className="min-h-[10vh]">
@@ -53,7 +47,6 @@ export default Layout
 </section>
 
 <section className="min-h-screen mb-[30vh]">
-
 <CaptionedPhoto captionRight image={getImageNodeByName(props, 'cover@2x')}>
 
   <CtaButton text='Q’eros' caption="Who we support" to="/qeros" />
