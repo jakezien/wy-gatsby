@@ -57,9 +57,9 @@ const CoverPhoto = (props) => {
 
   return (
     <Container className={props.className}>
-      <CaptionContainer className="caption w-full">
+      <div className={`w-full m-auto relative z-10 text-white ${props.bigText && "text-lg"}`}>
         {props.children ? props.children : <p>{props.caption}</p>}
-      </CaptionContainer>
+      </div>
       <FixedBg>
         {props.scrim ? <Scrim className="scrim" /> : ""}
         <Parallax {...parallaxProps}>
