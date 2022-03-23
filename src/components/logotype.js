@@ -13,9 +13,9 @@ const Logotype = (props) => {
     returnedLogo = <LogotypeSmallSvg />
   }
   return (
-    <i className={props.className}>
+    <div className={props.className}>
       {returnedLogo}
-    </i>
+    </div>
   )  
 }
 

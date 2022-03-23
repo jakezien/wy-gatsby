@@ -7,6 +7,10 @@ module.exports = {
     "./src/templates/*.js",
   ],
   theme: {
+    fontFamily: {
+      franklin: ["Franklin Gothic Compressed", "sans-serif"],
+      display: ["Garamond Pro Display", "serif"],
+    },
     extend: {},
   },
   plugins: [],
