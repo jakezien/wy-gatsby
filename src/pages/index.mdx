@@ -7,6 +7,11 @@ import Logotype from '../components/logotype'
 import {getImageNodeByName} from '../utils/util'
 import BgVideo from "../components/bgVideo"
 import ColorChangingText from "../components/colorChangingText"
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfigFile from '../../tailwind.config.js'
+const tailwindConfig = resolveConfig(tailwindConfigFile)
+const themeColors = tailwindConfig.theme.colors
+
 
 import IntroMp4 from '../images/home/home.mp4'
 
@@ -39,18 +44,16 @@ export default Layout
 </section>
 
 <section className="min-h-[10vh]">
-  <div className="w-1/2 mx-auto mb-[30vh] text-lg leading-6">
-  <ColorChangingText>
-    <p>hey hey hey</p>
-  </ColorChangingText>
-
+  <div className="w-1/2 mx-auto mb-[30vh] text-xl leading-6">
+  <ColorChangingText colors={[themeColors.darkBrown, themeColors.hotPink, themeColors.hotPink]}>
+    
   Willka Yachay is a nonprofit organization dedicated to helping indigenous communities thrive in the modern world.
-  
+
   <br/>
 
   We are empowering the next generation of the Q’eros Nation of Peru to become leaders who guide their community toward sustainable modernity and perpetuate their cultural identity.
-  
 
+  </ColorChangingText>
   </div>
 </section>
 

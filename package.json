@@ -10,6 +10,7 @@
   "dependencies": {
     "@mdx-js/mdx": "v1",
     "@mdx-js/react": "v1",
+    "color-interpolate": "^1.0.5",
     "gatsby": "^4.0.0",
     "gatsby-background-image": "^1.5.3",
     "gatsby-image": "^3.11.0",

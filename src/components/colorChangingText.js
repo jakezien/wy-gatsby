@@ -1,18 +1,31 @@
 import React from "react";
 import { useParallax } from 'react-scroll-parallax';
+import { rgbToHex } from "../utils/util";
+const interpolate = require('color-interpolate');
 
 const ColorChangingText = (props) => {
-  const { ref } = useParallax < HTMLDivElement > ({
-    onChange: (element) => console.log('change', element),
-    onProgressChange: (element) => console.log('progress change', element),
-    onEnter: (e) => console.log('enter', e),
-    onExit: (e) => console.log('exit', e),
-    speed: -100,
+  const [color, setColor] = React.useState(props.colors?.[0]);
+  const interpolator = interpolate(props.colors);
+
+  const onProgressChange = (progress) => {
+    let newColorRgb = interpolator(progress);
+    let newColorHex = rgbToHex(newColorRgb);
+    setColor(newColorHex);
+    console.log(newColorHex);
+  }
+
+  const { ref } = useParallax({
+    // onChange: (e) => console.log('change', e),
+    onProgressChange: onProgressChange,
+    speed:0,
   });
 
 
   return (
-    <div className="color-changing-text" ref={ref}>
+    <div className={props.className} ref={ref} style={{
+      color: color,
+      willChange: "color",
+    }}>
       {props.children}
     </div>
   )
