@@ -8,6 +8,7 @@
   html {
     font-size: 20px;
     font-family: "Garamond Pro", sans-serif;
+    @apply bg-white;
     /* @apply text-base */
   }
   h1 {

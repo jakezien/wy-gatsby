@@ -6,6 +6,7 @@ import CtaButton from '../components/ctaButton'
 import Logotype from '../components/logotype'
 import {getImageNodeByName} from '../utils/util'
 import BgVideo from "../components/bgVideo"
+import ColorChangingText from "../components/colorChangingText"
 
 import IntroMp4 from '../images/home/home.mp4'
 
@@ -30,19 +31,26 @@ export default Layout
 
 <section className="min-h-screen mb-[30vh]">
   <CoverPhoto bg={<BgVideo src={IntroMp4} />}>
-    <Logotype horizontal className="fill-white block w-[55%] mx-auto"/>
-    <hr className="h-0.5 bg-white my-20 w-2/3 mx-auto"/>
+    <Logotype horizontal className="fill-cloud block w-[55%] mx-auto"/>
+    <hr className="h-0.5 bg-cloud my-20 w-2/3 mx-auto"/>
     <h2 className="text-center">Empowering the Q’eros Nation of Peru</h2>
     <div className="w-full h-50"></div>
   </CoverPhoto>
 </section>
 
 <section className="min-h-[10vh]">
-  <div className="w-2/3 mx-auto mb-[30vh]">
+  <div className="w-1/2 mx-auto mb-[30vh] text-lg leading-6">
+  <ColorChangingText>
+    <p>hey hey hey</p>
+  </ColorChangingText>
 
   Willka Yachay is a nonprofit organization dedicated to helping indigenous communities thrive in the modern world.
+  
+  <br/>
+
   We are empowering the next generation of the Q’eros Nation of Peru to become leaders who guide their community toward sustainable modernity and perpetuate their cultural identity.
   
+
   </div>
 </section>
 
