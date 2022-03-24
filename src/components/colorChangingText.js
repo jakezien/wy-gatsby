@@ -10,8 +10,10 @@ const ColorChangingText = (props) => {
   const onProgressChange = (progress) => {
     let newColorRgb = interpolator(progress);
     let newColorHex = rgbToHex(newColorRgb);
-    setColor(newColorHex);
-    console.log(newColorHex);
+    if (newColorHex !== color) {
+      setColor(newColorHex);
+      console.log(newColorHex);
+    }
   }
 
   const { ref } = useParallax({
