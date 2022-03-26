@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from 'react-scroll-parallax';
-import { rhythm, scale } from "../utils/typography"
 
 const Scrim = styled.div`
   width: 100%;
@@ -11,8 +10,6 @@ const Scrim = styled.div`
   background: white;
   z-index: 1;
 `
-
-
 
 const CoverPhoto = (props) => {
 
@@ -37,7 +34,7 @@ const CoverPhoto = (props) => {
       <figure className={`w-full h-full z-0 ${props.fixed ? 'fixed' : 'absolute'}`}>
         {props.scrim ? <Scrim className="scrim" /> : ""}
         <Parallax {...parallaxProps}>
-          {props.bg ? props.bg : <GatsbyImage image={props.image} className="h-screen" />}
+          {props.bg ? props.bg : <GatsbyImage image={props.image} alt={props.alt} className="h-screen" />}
         </Parallax>
       </figure>
     </div>

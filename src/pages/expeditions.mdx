@@ -6,7 +6,7 @@ path: expeditions
 import Layout from '../components/layout'
 import CoverPhoto from '../components/coverPhoto'
 import CaptionedPhoto from '../components/captionedPhoto'
-import Img from "gatsby-image"
+import { GatsbyImageData } from "gatsby-plugin-image"
 import CtaButton from '../components/ctaButton'
 import { getImageNodeByName} from '../utils/util'
 import { graphql } from 'gatsby'
@@ -15,14 +15,15 @@ export default Layout
 
 export const pageQuery = graphql`
   query expeditionsImages {
-    images: allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "expeditions"}}) {
+    images: allFile(filter: {
+      extension: {regex: "/(jpg)|(jpeg)|(png)/"}, 
+      relativeDirectory: {eq: "expeditions"}
+    }) {
       edges {
         node {
           name
           childImageSharp {
-            fluid(maxWidth: 1200, maxHeight: 800) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData
           }
         }
       }
@@ -30,7 +31,7 @@ export const pageQuery = graphql`
   }
 `
 
-<CoverPhoto image={getImageNodeByName(props, 'top@2x')} >
+<CoverPhoto image={getImageNodeByName(props, 'top@2x')} className="text-center" >
 
 # Expeditions
 
