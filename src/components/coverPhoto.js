@@ -31,7 +31,7 @@ const CoverPhoto = (props) => {
       w-full flex overflow-hidden relative
       ${props.fullHeight ? 'h-screen' : 'h-[90vh]'} 
     `}>
-      <div className={`w-full m-auto relative z-10 text-white top-16 ${props.bigText && 'text-lg'}`}>
+      <div className={`w-full m-auto relative z-10 text-white top-12 ${props.bigText && 'text-lg'}`}>
         {props.children ? props.children : <p>{props.caption}</p>}
       </div>
       <figure className={`w-full h-full z-0 ${props.fixed ? 'fixed' : 'absolute'}`}>
