@@ -35,7 +35,16 @@ export const pageQuery = graphql`
 export default Layout
 
 <section className="min-h-screen mb-[30vh]">
-  <CoverPhoto bg={<BgVideo src={IntroMp4} />}>
+  <CoverPhoto 
+    bg={<BgVideo src={IntroMp4} />}
+    parallaxProps={{
+      opacity: [1, 0],
+      startScroll: 0,
+      endScroll: 600
+    }}
+    fullHeight
+    fixed
+  >
     <Logotype horizontal className="fill-cloud block w-[55%] mx-auto"/>
     <hr className="h-0.5 bg-cloud my-20 w-2/3 mx-auto"/>
     <h2 className="text-center">Empowering the Q’eros Nation of Peru</h2>

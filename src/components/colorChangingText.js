@@ -12,7 +12,6 @@ const ColorChangingText = (props) => {
     let newColorHex = rgbToHex(newColorRgb);
     if (newColorHex !== color) {
       setColor(newColorHex);
-      console.log(newColorHex);
     }
   }
 
