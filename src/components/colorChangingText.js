@@ -1,6 +1,6 @@
 import React from "react";
 import { useParallax } from 'react-scroll-parallax';
-import { rgbToHex } from "../utils/util";
+import { rgbToHex } from "../util/util";
 const interpolate = require('color-interpolate');
 
 const ColorChangingText = (props) => {

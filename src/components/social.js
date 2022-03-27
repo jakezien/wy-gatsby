@@ -1,5 +1,5 @@
 import React from "react"
-import { rhythm, scale } from "../utils/typography"
+
 import styled from "styled-components"
 
 const Social = () => {

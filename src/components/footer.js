@@ -1,13 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import { rhythm, scale } from "../utils/typography"
+
 import Container from "./container"
 import Logotype from "./logotype"
 import Social from "./social"
 
 const Footer = () => {
   return (      
-    <footer>
+    <footer className="relative z-1 bg-brown">
       <Container >
         <Logotype />
         <div>

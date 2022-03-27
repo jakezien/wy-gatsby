@@ -33,9 +33,11 @@ const CoverPhoto = (props) => {
       </div>
       <figure className={`w-full h-full z-0 ${props.fixed ? 'fixed' : 'absolute'}`}>
         {props.scrim ? <Scrim className="scrim" /> : ""}
-        <Parallax {...parallaxProps}>
-          {props.bg ? props.bg : <GatsbyImage image={props.image} alt={props.alt} className="h-screen" />}
-        </Parallax>
+        {props.bg ? props.bg :
+          <Parallax {...parallaxProps}>
+            <GatsbyImage image={props.image} alt={props.alt} className="h-screen" />
+          </Parallax>
+        }
       </figure>
     </div>
   )

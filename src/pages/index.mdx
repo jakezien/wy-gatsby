@@ -1,13 +1,14 @@
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import CaptionedPhoto from '../components/captionedPhoto'
 import CoverPhoto from '../components/coverPhoto'
 import CtaButton from '../components/ctaButton'
 import Logotype from '../components/logotype'
-import {getImageNodeByName} from '../utils/util'
+import { getImageNodeByName } from '../util/util'
 import BgVideo from "../components/bgVideo"
 import ColorChangingText from "../components/colorChangingText"
 import resolveConfig from 'tailwindcss/resolveConfig'
+import { Parallax } from 'react-scroll-parallax'
 import tailwindConfigFile from '../../tailwind.config.js'
 const tailwindConfig = resolveConfig(tailwindConfigFile)
 const themeColors = tailwindConfig.theme.colors
@@ -36,12 +37,11 @@ export default Layout
 
 <section className="min-h-screen mb-[30vh]">
   <CoverPhoto 
-    bg={<BgVideo src={IntroMp4} />}
-    parallaxProps={{
-      opacity: [1, 0],
-      startScroll: 0,
-      endScroll: 600
-    }}
+    bg={
+      <Parallax opacity={[1,0]} startScroll={0} endScroll={600}>
+        <BgVideo src={IntroMp4} />
+      </Parallax>
+    }
     fullHeight
     fixed
   >

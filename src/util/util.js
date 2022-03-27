@@ -1,3 +1,6 @@
+import ReactDOMServer from 'react-dom/server';
+
+
 export const getImageNodeByName = (props, name) => {
   let filteredResult = props.data.images.edges.filter((e) => { 
     return (e.node.name === name) 
@@ -23,4 +26,9 @@ export function rgbToHex(rgb) {
       hex = "#" + (0x1000000 + (r << 16) + (g << 8) + b).toString(16).slice(1);
   }
   return hex;
+}
+
+
+export function encodeSvg(reactElement) {
+  return 'data:image/svg+xml,' + escape(ReactDOMServer.renderToStaticMarkup((reactElement)));
 }
