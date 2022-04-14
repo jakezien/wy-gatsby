@@ -33,7 +33,8 @@ const ExpeditionsHero = (props) => {
         speed: -50,
         children: (
           <div className="absolute w-full h-full flex flex-col justify-center">
-            <h1 className="text-center mx-auto text-white">Expeditions</h1>
+            <h1 className="text-center mx-auto text-cloud">Expeditions</h1>
+            <p className="text-cloud max-w-2xl mt-4 mx-auto">In partnership with Q’ero families, Willka Yachay offers expeditions to individuals and groups who appreciate the Q’eros, support their sustainable development, seek a strong intercultural connection with&nbsp;them, and wish to learn from their teachings.</p>
           </div>
         )
       },
