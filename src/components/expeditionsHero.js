@@ -48,12 +48,13 @@ const ExpeditionsHero = (props) => {
               maskImage: 'url(mountains.svg)',
               maskPosition: 'center 67%',
               maskRepeat: 'no-repeat',
-              maskSize: '100% auto'
+              maskSize: '100% auto',
+              bottom: '-15%'
             }}/>
         ) 
       },
       {
-        speed: 0,
+        speed: 10,
         children: (
           <StaticImage
             alt="A starry sky framed by mountains. At their base, several tents glow from lantern light within."
@@ -63,7 +64,8 @@ const ExpeditionsHero = (props) => {
               maskImage: 'url(tents.svg)',
               maskPosition: 'center bottom',
               maskRepeat: 'no-repeat',
-              maskSize: '100% auto'
+              maskSize: '100% auto',
+              bottom: '3%'
             }}/>
         )
       },
