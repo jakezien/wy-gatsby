@@ -33,13 +33,13 @@ const ExpeditionsHero = (props) => {
         speed: -50,
         children: (
           <div className="absolute w-full h-full flex flex-col justify-center">
-            <h1 className="text-center mx-auto text-cloud">Expeditions</h1>
-            <p className="text-cloud max-w-2xl mt-4 mx-auto">In partnership with Q’ero families, Willka Yachay offers expeditions to individuals and groups who appreciate the Q’eros, support their sustainable development, seek a strong intercultural connection with&nbsp;them, and wish to learn from their teachings.</p>
+            <h1 className="text-center mx-auto text-cloud mb-24">Expeditions</h1>
+            {/* <p className="text-cloud max-w-2xl mt-4 mx-auto visibility:hidden">In partnership with Q’ero families, Willka Yachay offers expeditions to individuals and groups who appreciate the Q’eros, support their sustainable development, seek a strong intercultural connection with&nbsp;them, and wish to learn from their teachings.</p> */}
           </div>
         )
       },
       {
-        speed: 0,
+        speed: -10,
         children: (
           <StaticImage 
             alt="" 
@@ -50,26 +50,39 @@ const ExpeditionsHero = (props) => {
               maskPosition: 'center 67%',
               maskRepeat: 'no-repeat',
               maskSize: '100% auto',
-              bottom: '-15%'
+              bottom: '3%'
             }}/>
         ) 
       },
       {
-        speed: 10,
+        speed: 5,
         children: (
           <StaticImage
-            alt="A starry sky framed by mountains. At their base, several tents glow from lantern light within."
-            src='../images/expeditions/top@2x.jpg'
-            className="w-full absolute left-0 bottom-0 object-bottom"
-            style={{
-              maskImage: 'url(tents.svg)',
-              maskPosition: 'center bottom',
-              maskRepeat: 'no-repeat',
-              maskSize: '100% auto',
-              bottom: '3%'
-            }}/>
-        )
-      },
+          alt="A starry sky framed by mountains. At their base, several tents glow from lantern light within."
+          src='../images/expeditions/top@2x.jpg'
+          className="w-full absolute left-0 bottom-0 object-bottom"
+          style={{
+            maskImage: 'url(tents.svg)',
+            maskPosition: 'center bottom',
+            maskRepeat: 'no-repeat',
+            maskSize: '100% auto',
+            bottom: '0%'
+          }}/>
+          )
+        },
+        {
+          speed: -20,
+          opacity: [1,0],
+          startScroll: 0,
+          // shouldAlwaysCompleteAnimation: true,
+          endScroll: 350,
+          children: (
+              <div className="absolute w-full h-full flex flex-col justify-center top-[256px]">
+                {/* <h1 className="text-center mx-auto text-cloud ">Expeditions</h1> */}
+                <p className="text-cloud max-w-2xl w-5/6 mx-auto mt-28 md:mt-16">In partnership with Q’ero families, Willka Yachay offers expeditions to individuals and groups who appreciate the Q’eros, support their sustainable development, seek a strong intercultural connection with&nbsp;them, and wish to learn from their teachings.</p>
+              </div>
+            )
+        }
     ]}
   />
   )

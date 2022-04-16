@@ -32,11 +32,11 @@ export const pageQuery = graphql`
   }
 `
 
-<CoverPhoto image={getImageNodeByName(props, 'top@2x')} className="text-center h-[80vh]" bg={<ExpeditionsHero/>} />
+<CoverPhoto image={getImageNodeByName(props, 'top@2x')} className="text-center h-screen md:h-[80vh]" bg={<ExpeditionsHero/>} />
 
 <div className="relative z-1 bg-white">
 
-<section className="max-w-prose mx-auto py-8 text-brown">
+<section className="max-w-prose mx-auto py-8 px-2 md:px-0 text-brown">
 
   <div className="mb-4 text-xl -tracking-[0.01em]">
 
@@ -73,6 +73,7 @@ export const pageQuery = graphql`
 
   </div>
 
+  {/* TODO: these ctabuttons */}
   <p><a>Join our next expedition to Q’eros</a></p>
   <p><a>Contact us about a private journey</a></p>
 
